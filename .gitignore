@@ -9,3 +9,4 @@ docs/**/*.mo
 __pycache__/
 *.py[cod]
 *$py.class
+.codex/
