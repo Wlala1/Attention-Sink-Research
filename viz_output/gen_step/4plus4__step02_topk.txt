@@ -1,0 +1,63 @@
+prompt: What is 4+4?
+
+target_step: 2
+decode_mode: greedy
+
+chat-templated prompt:
+<|im_start|>user
+What is 4+4?<|im_end|>
+<|im_start|>assistant
+
+
+prompt_tokens (15):
+['<|im_start|>', 'user', 'Ċ', 'What', 'Ġis', 'Ġ', '4', '+', '4', '?', '<|im_end|>', 'Ċ', '<|im_start|>', 'assistant', 'Ċ']
+
+prompt_input_ids:
+[151644, 872, 198, 3838, 374, 220, 19, 10, 19, 30, 151645, 198, 151644, 77091, 198]
+
+manual_generated_ids (steps 1..2):
+[19, 488]
+manual_generated_texts (steps 1..2):
+['4', ' +']
+
+generate_suffix_ids (steps 1..2):
+[19, 488]
+
+step01_greedy_token: id=19 repr='4'
+second token is analyzed under prefix where first generated token = '4' (id=19)
+
+generated_token_ids_so_far before target step:
+[19]
+generated_token_text_so_far before target step:
+['4']
+
+query_token_id: 19
+query_token_text: '4'
+full_prefix_ids_at_target:
+[151644, 872, 198, 3838, 374, 220, 19, 10, 19, 30, 151645, 198, 151644, 77091, 198, 19]
+
+per-layer query_seq_len: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+per-layer key_seq_len: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]
+
+top-20 predictions at step02:
+rank   tok_id       logit        prob  repr
+   0      488     48.2500    1.000000  ' +'
+   1     5519     33.0000    0.000000  ' plus'
+   2       10     26.6250    0.000000  '+'
+   3    12343     24.5000    0.000000  ' Plus'
+   4    28043     20.8750    0.000000  '_plus'
+   5    21807     20.0000    0.000000  'Plus'
+   6     7138     18.3750    0.000000  'plus'
+   7    58453     18.3750    0.000000  ' PLUS'
+   8     3610     18.0000    0.000000  ' +\n'
+   9   102189     17.1250    0.000000  '加上'
+  10     1421     16.1250    0.000000  ' +='
+  11   140157     16.0000    0.000000  '＋'
+  12    60540     16.0000    0.000000  '.plus'
+  13    22934     15.8125    0.000000  '-plus'
+  14      481     15.5000    0.000000  ' -'
+  15    17973     15.1875    0.000000  ' (+'
+  16   147604     14.6250    0.000000  '⁺'
+  17      284     14.3750    0.000000  ' ='
+  18      323     14.1875    0.000000  ' and'
+  19       15     14.1250    0.000000  '0'

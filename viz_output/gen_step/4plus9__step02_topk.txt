@@ -1,0 +1,63 @@
+prompt: What is 4+9?
+
+target_step: 2
+decode_mode: greedy
+
+chat-templated prompt:
+<|im_start|>user
+What is 4+9?<|im_end|>
+<|im_start|>assistant
+
+
+prompt_tokens (15):
+['<|im_start|>', 'user', 'Ċ', 'What', 'Ġis', 'Ġ', '4', '+', '9', '?', '<|im_end|>', 'Ċ', '<|im_start|>', 'assistant', 'Ċ']
+
+prompt_input_ids:
+[151644, 872, 198, 3838, 374, 220, 19, 10, 24, 30, 151645, 198, 151644, 77091, 198]
+
+manual_generated_ids (steps 1..2):
+[19, 488]
+manual_generated_texts (steps 1..2):
+['4', ' +']
+
+generate_suffix_ids (steps 1..2):
+[19, 488]
+
+step01_greedy_token: id=19 repr='4'
+second token is analyzed under prefix where first generated token = '4' (id=19)
+
+generated_token_ids_so_far before target step:
+[19]
+generated_token_text_so_far before target step:
+['4']
+
+query_token_id: 19
+query_token_text: '4'
+full_prefix_ids_at_target:
+[151644, 872, 198, 3838, 374, 220, 19, 10, 24, 30, 151645, 198, 151644, 77091, 198, 19]
+
+per-layer query_seq_len: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+per-layer key_seq_len: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]
+
+top-20 predictions at step02:
+rank   tok_id       logit        prob  repr
+   0      488     48.0000    1.000000  ' +'
+   1     5519     31.6250    0.000000  ' plus'
+   2       10     25.6250    0.000000  '+'
+   3    12343     22.5000    0.000000  ' Plus'
+   4    28043     19.3750    0.000000  '_plus'
+   5    21807     18.1250    0.000000  'Plus'
+   6     3610     17.7500    0.000000  ' +\n'
+   7   102189     17.0000    0.000000  '加上'
+   8    58453     16.8750    0.000000  ' PLUS'
+   9     7138     16.6250    0.000000  'plus'
+  10     1421     16.1250    0.000000  ' +='
+  11   140157     16.0000    0.000000  '＋'
+  12    60540     15.7500    0.000000  '.plus'
+  13    17973     15.3750    0.000000  ' (+'
+  14       15     15.2500    0.000000  '0'
+  15      481     15.0000    0.000000  ' -'
+  16    24768     14.6250    0.000000  ' ×'
+  17      323     14.3125    0.000000  ' and'
+  18      353     14.2500    0.000000  ' *'
+  19      284     14.1875    0.000000  ' ='
